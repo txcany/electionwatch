@@ -1,0 +1,29 @@
+@import "bootstrap";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
+
+.navbar {
+  font-family: 'Bangers', cursive;
+  font-weight: 200;
+}
+
+
+h1 {
+  font-family: 'Six Caps', sans-serif;
+  font-weight: 200;
+}
+
+
+h2 {
+  font-family: 'Six Caps', sans-serif;
+}
+
+ #map {
+    height: 100%;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
