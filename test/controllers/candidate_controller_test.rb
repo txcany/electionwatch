@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DistrictPagesControllerTest < ActionDispatch::IntegrationTest
+class CandidateControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

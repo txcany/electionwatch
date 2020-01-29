@@ -1,4 +1,4 @@
 class Candidate < ApplicationRecord
-  has_one :district
+  belongs_to :district
 
 end

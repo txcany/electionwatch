@@ -16,6 +16,12 @@ ActiveRecord::Schema.define(version: 2020_01_23_000504) do
   enable_extension "plpgsql"
 
   create_table "candidates", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "party"
+    t.string "photo_url"
+    t.string "map"
+    t.integer "district_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
