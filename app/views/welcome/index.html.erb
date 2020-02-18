@@ -1,14 +1,89 @@
-  <div> 
-        <script>
-            var map;
-              function initMap() {
-                  map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: 31.170, lng: -99.684},
-                      zoom: 7
-                   });
-                  }
-            </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzChl-h--geqkfwcco-bUkFGCy5IAG4v0&callback=initMap"      async defer></script>
-    <div id="map"></div>
+            
+            var infoWindow;
+              var geocoder;
+              var map;
 
+              var districtIdMap = {
+                g2719c1fd86852fbb: { id: 1, name: 'HD 134'},
+                g2719c1fd86852fbb: { id: 2, name: 'HD 108'},
+                g2719c1fd86852fbb: { id: 3, name: 'HD 112'},
+                g2719c1fd86852fbb: { id: 4, name: 'HD 138'},
+                g2719c1fd86852fbb: { id: 5, name: 'HD 66'},
+                g2719c1fd86852fbb: { id: 6, name: 'HD 67'},
+                g2719c1fd86852fbb: { id: 7, name: 'HD 26'},
+                g2719c1fd86852fbb: { id: 8, name: 'HD 64'},
+                g2719c1fd86852fbb: { id: 9, name: 'HD 121'},
+
+              };
+
+              function initMap() {
+                geocoder = new google.maps.Geocoder();
+                var austin = {lat: 30.26715, lng: -97.74306};
+
+                var kmlUrlArrays = [
+                  'https://districthd.s3.amazonaws.com/Sarah-Davis.kml',
+                  'https://districthd.s3.amazonaws.com/Morgan-Meyer.kml',
+                  'https://districthd.s3.amazonaws.com/Angie-Chen-Button.kml',
+                  'https://districthd.s3.amazonaws.com/Dwayne-Bohac.kml',
+                  'https://districthd.s3.amazonaws.com/Matt-Shaheen.kml',
+                  'https://districthd.s3.amazonaws.com/Jeff-Leach.kml',
+                  'https://districthd.s3.amazonaws.com/Rick-Miller.kml',
+                  'https://districthd.s3.amazonaws.com/Lynn-Stuckey.kml',
+                  'https://districthd.s3.amazonaws.com/Steve-Allison.kml',
+                   ];
+
+
+                map = new google.maps.Map(
+                    document.getElementById('map'), {zoom: 7, center: austin});
+                infoWindow = new google.maps.InfoWindow;
+
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+
+                    var pos = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+
+                    console.log('current position ',pos);
+
+
+                    map.setCenter(pos);
+
+                    kmlUrlArrays.forEach((url) => {
+                      var kmlLayer = new google.maps.KmlLayer({
+                        url: url,
+                        suppressInfoWindows: true,
+                        preserveViewport: true,
+                        map: map
+                      });
+                      var kmlClickHandler = new KmlClickEventHandler(kmlLayer, origin);
+                    });
+                  });
+                } else {
+          
+                  handleLocationError(false, infoWindow, map.getCenter());
+                }
+              }
+
+
+              var KmlClickEventHandler = function(kmlLayer, origin) {
+         
+                kmlLayer.addListener('click', this.handleKmlClick.bind(this));
+              };
+
+              KmlClickEventHandler.prototype.handleKmlClick = function(event) {
+                console.log(event.featureData)
+                var districtData = districtIdMap[event.featureData.id];
+
+                if(districtData) {
+                  var districtName = districtData.name;
+                  var districtId = districtData.id;
+                  infoWindow.setPosition(event.latLng);
+                  infoWindow.setContent(`<div><a href=/district/${districtId}>${districtName}</a></div>`);
+                  infoWindow.open(map);
+                }  
+              };
+
+  
 
