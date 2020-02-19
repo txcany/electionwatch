@@ -1,8 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
 
 
 
@@ -63,5 +63,21 @@ h2 {
 
 body {
   font-family: 'Six Caps', sans-serif;
+}
 
+.candidates-box {
+  padding: 80px;
+
+  #dem {
+    color: #1f3a93;
+  }
+
+  #rep {
+    color: #96281b;
+  }
+}
+
+.candidate-image {
+  object-fit: cover;
+  height: 250px;
 }
