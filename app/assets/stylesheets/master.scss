@@ -3,28 +3,31 @@
 @import url('https://fonts.googleapis.com/css?family=Six+Caps&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
 
 
 .navbar {
-  font-family: 'Six Caps', sans-serif;
-  font-weight: 200px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600px;
 }
 
 .navbar-brand {
-  font-family: 'Six Caps', sans-serif;
+  font-family: 'Roboto Slab', serif;
   font-weight: 600;
 }
 
 
 h1 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Roboto Slab', serif;
   font-weight: 600;
 }
 
 
 h2 {
-  font-family: 'Six Caps', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 
@@ -62,6 +65,26 @@ h2 {
 }
 
 body {
-  font-family: 'Six Caps', sans-serif;
+  font-family: 'Slabo 27px', serif;
+}
 
+.candidate-box {
+  padding: 70px;
+}
+
+.candidate-image {
+  object-fit: cover;
+  height: 250px;
+}
+
+dem {
+  color: #4d05e8;
+}
+
+rep {
+  color: #cf000f;
+}
+
+lib {
+  color: #f5e51b
 }
