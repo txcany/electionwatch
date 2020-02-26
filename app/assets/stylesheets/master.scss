@@ -13,19 +13,17 @@
   font-weight: 600px;
 }
 
-.navbar-light a.navbar-brand {
-  font-family: 'Slabo 27px', serif;
-  font-size:  80px;
-  letter-spacing: -0.1px;
-}
 
-.navbar-light .navbar-nav .nav-link{
-  color: lightgray;
+
+#navbar-logo {
+  max-width: 800px;
+  max-height: 600px;
 }
 
 .navbar-brand {
   font-family: 'Slabo 27px', serif;
   font-weight: 600;
+  color: #2c3036;
 }
 
 
@@ -75,6 +73,7 @@ h2 {
 
 body {
   font-family: 'Slabo 27px', serif;
+  color: #2c3036;
 }
 
 .candidate-box {

@@ -17,7 +17,7 @@
             <span class="navbar-toggler-icon"></span>
               </button>
                 <!-- <a class="navbar-brand" href="#">Election Watch Texas</a> -->
-                <img id="navbar-logo" class="img-responsive" src="images/ElectionWatchBanner.png" alt="electionwatchlogo">
+                <%= image_tag("ElectionWatchBanner.png", class:"img-responsive", id: "navbar-logo") %>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item active">
@@ -36,34 +36,6 @@
         </form>
       </div>
     </nav>
-
-<!--         <div class="top-nav sticky-top"> 
-
-          <div class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-              <div class="bg-dark p-4">
-                <h5 class="text-white h4">Collapsed content</h5>
-                <a class="navbar-brand" href="#">Districts</a>
-              </div>
-            </div>
-            <nav class="navbar navbar-dark bg-dark">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-          </div> -->
-
-
-
-<!--       <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-sm-8">
-                    <br />
-                    <h1>Election Watch Texas </h1>
-                    <br />
-                </div>
-            </div> 
-        </div>  -->
 
 
       <%= yield %>
