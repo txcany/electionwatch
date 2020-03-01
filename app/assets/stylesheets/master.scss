@@ -8,7 +8,7 @@
 
 .navbar {
   font-family: 'PT Serif Caption', ;
-  font-weight: 600px;
+  font-weight: 200px;
 }
 
 
@@ -20,14 +20,14 @@
 
 .navbar-brand {
   font-family: 'Slabo 27px', serif;
-  font-weight: 600;
   color: #2c3036;
+  font-weight: 100px;
 }
 
 
 h1 {
   font-family: 'PT Serif Caption', ;
-  font-weight: 100;
+  font-weight: 50;
   color: #0B3C68;
 }
 
@@ -100,4 +100,6 @@ lib {
   color: #f5e51b
 }
 
-
+.display-4 {
+  font-weight: 200px;
+}
